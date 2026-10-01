@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор абонемента — секции ЦСКА</title>
+  <!-- шрифт, близкий к фирменному PF DIN Text Pro сайта cska.ru -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap">
+  <!-- подключаем таблицу стилей из отдельного файла -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- шапка страницы: тёмно-синяя, как header на cska.ru -->
+  <header class="club-header">
+    <div class="club-header__stripe"></div>
+    <h1 class="club-header__title">Спортивные секции клуба</h1>
+    <a class="club-btn-github" href="https://github.com/d0ndle/sport-sections-club" target="_blank">GitHub</a>
+  </header>
+
+  <main class="club-main">
+    <!-- корпус калькулятора -->
+    <div class="sport-calculator">
+
+      <!-- табло: сюда выводится вводимое число и результат -->
+      <div id="result" class="scoreboard">
+        0
+      </div>
+
+      <!-- блок с кнопками -->
+      <div class="keypad">
+        <div class="keypad-row">
+          <button id="btn_op_clear" class="club-btn club-btn--grey">C</button>
+          <button id="btn_op_sign" class="club-btn club-btn--grey">+/-</button>
+          <button id="btn_op_percent" class="club-btn club-btn--grey">%</button>
+          <button id="btn_op_div" class="club-btn club-btn--red">/</button>
+        </div>
+
+        <div class="keypad-row">
+          <button id="btn_digit_7" class="club-btn">7</button>
+          <button id="btn_digit_8" class="club-btn">8</button>
+          <button id="btn_digit_9" class="club-btn">9</button>
+          <button id="btn_op_mult" class="club-btn club-btn--red">x</button>
+        </div>
+
+        <div class="keypad-row">
+          <button id="btn_digit_4" class="club-btn">4</button>
+          <button id="btn_digit_5" class="club-btn">5</button>
+          <button id="btn_digit_6" class="club-btn">6</button>
+          <button id="btn_op_minus" class="club-btn club-btn--red">-</button>
+        </div>
+
+        <div class="keypad-row">
+          <button id="btn_digit_1" class="club-btn">1</button>
+          <button id="btn_digit_2" class="club-btn">2</button>
+          <button id="btn_digit_3" class="club-btn">3</button>
+          <button id="btn_op_plus" class="club-btn club-btn--red">+</button>
+        </div>
+
+        <div class="keypad-row">
+          <button id="btn_op_backspace" class="club-btn club-btn--grey">⌫</button>
+          <button id="btn_digit_0" class="club-btn">0</button>
+          <button id="btn_digit_dot" class="club-btn">.</button>
+          <button id="btn_op_equal" class="club-btn club-btn--blue">=</button>
+        </div>
+
+        <!-- индивидуальная операция по теме: стоимость абонемента в секцию -->
+        <div class="keypad-row">
+          <button id="btn_op_membership" class="club-btn club-btn--red club-btn--wide">Абонемент</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- сворачиваемый блок с информацией об авторе -->
+    <details class="author-details">
+      <summary>Автор</summary>
+      <p>Крючков Даниил Игоревич</p>
+      <p>Группа ИБМ3-54Б</p>
+    </details>
+  </main>
+
+  <footer class="club-footer">
+    ЛР выполнена: Крючков Д.И., ИБМ3-54Б
+  </footer>
+</body>
+
+</html>
