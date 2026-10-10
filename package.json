@@ -1,0 +1,19 @@
+{
+  "name": "sport-sections-api",
+  "version": "1.0.0",
+  "description": "REST API спортивных секций клуба",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --watch src --ignore src/data src/index.js"
+  },
+  "author": "Крючков Даниил Игоревич",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

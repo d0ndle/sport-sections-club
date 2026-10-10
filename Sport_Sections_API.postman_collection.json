@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "sport-sections-api",
+		"name": "Sport Sections API",
+		"description": "REST API спортивных секций клуба (ЛР4)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Список всех секций",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections"
+					]
+				},
+				"description": "Все секции из sport-sections.json"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Фильтрация по виду спорта",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections?sportName=фут",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections"
+					],
+					"query": [
+						{
+							"key": "sportName",
+							"value": "фут"
+						}
+					]
+				},
+				"description": "Секции, в названии которых есть подстрока (без учёта регистра)"
+			},
+			"response": []
+		},
+		{
+			"name": "3. Секция по id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections",
+						"2"
+					]
+				},
+				"description": "Одна секция; если id нет — 404"
+			},
+			"response": []
+		},
+		{
+			"name": "4. Добавить секцию",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections"
+					]
+				},
+				"description": "Создание секции; обязательные поля: sportName, coachName, ageGroup, monthlyPrice. Ответ 201",
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sportName\": \"Теннис\",\n  \"coachName\": \"Дарья Касаткина\",\n  \"ageGroup\": \"8–16 лет\",\n  \"monthlyPrice\": 5500,\n  \"schedule\": \"Вт, Чт — 18:00\",\n  \"description\": \"Работа на корте: подача, удар с отскока, игра у сетки.\",\n  \"imageSrc\": \"images/tennis.svg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Редактировать секцию",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections",
+						"7"
+					]
+				},
+				"description": "Частичное обновление: меняются только переданные поля. Ответ 200 или 404",
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"monthlyPrice\": 6000,\n  \"schedule\": \"Вт, Чт, Сб — 18:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Удалить секцию",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sport-sections/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sport-sections",
+						"7"
+					]
+				},
+				"description": "Удаление; ответ 204 без тела или 404"
+			},
+			"response": []
+		}
+	]
+}
