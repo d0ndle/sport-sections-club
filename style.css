@@ -157,3 +157,30 @@ body {
 .club-details__facts li {
   margin-bottom: 6px;
 }
+
+/* ДЗ: панели страницы «Подробнее» */
+.club-panel {
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(15, 17, 65, 0.08);
+}
+
+.club-ball {
+  height: 300px;
+  border-radius: 12px;
+  background: radial-gradient(circle, var(--color-primary), var(--color-secondary));
+  cursor: grab;
+}
+
+.club-attendance th {
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+/* ячейки диагоналей подсвечиваем фирменным красным */
+.club-attendance__diagonal {
+  --bs-table-bg: var(--color-red);
+  --bs-table-color: #fff;
+  font-weight: 700;
+}

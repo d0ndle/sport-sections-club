@@ -9,6 +9,7 @@
   "author": "Крючков Даниил Игоревич",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "three": "^0.160.0"
   }
 }

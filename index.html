@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- свои стили подключаем после bootstrap, чтобы они перекрывали его -->
     <link rel="stylesheet" href="style.css">
+    <!-- importmap: по имени 'three' браузер возьмёт three.js из node_modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./node_modules/three/build/three.module.js",
+                "three/examples/jsm/": "./node_modules/three/examples/jsm/"
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="root"></div>
